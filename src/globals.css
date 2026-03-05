@@ -1,81 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  /* Deep Navy Dark Theme (default) */
-  --background: 222 47% 7%;
-  --foreground: 210 20% 98%;
-  --card: 222 47% 9%;
-  --card-foreground: 210 20% 98%;
-  --popover: 222 47% 7%;
-  --popover-foreground: 210 20% 98%;
+  /* Monochrome + Blue Pastel Dark Theme (default) */
+  /* Palette: #769EDB · #86AADC · #A7C2E0 · #E3ECF3 · #F1F4FB */
+  --background: 220 6% 4%;
+  --foreground: 0 0% 98%;
+  --card: 220 6% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 220 6% 4%;
+  --popover-foreground: 0 0% 98%;
 
-  /* Pastel Blue Primary */
-  --primary: 210 100% 85%;
-  --primary-foreground: 222 47% 7%;
+  /* Blue Pastel Primary — #769EDB */
+  --primary: 216 56% 66%;
+  --primary-foreground: 216 40% 12%;
 
-  /* Lighter Navy / Desaturated Secondary */
-  --secondary: 222 47% 12%;
-  --secondary-foreground: 210 20% 98%;
+  --secondary: 220 4% 16%;
+  --secondary-foreground: 0 0% 98%;
 
-  --muted: 222 47% 15%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 220 4% 16%;
+  --muted-foreground: 215 10% 65%;
 
-  /* Accent: slightly more saturated pastel blue */
-  --accent: 214 80% 75%;
-  --accent-foreground: 222 47% 7%;
+  /* Accent — #86AADC */
+  --accent: 215 52% 69%;
+  --accent-foreground: 216 40% 12%;
 
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 20% 98%;
+  --destructive-foreground: 0 0% 98%;
 
-  --border: 222 47% 15%;
-  --input: 222 47% 15%;
-  --ring: 210 100% 85%;
-  --radius: 0.75rem;
-
-  /* Professional Portfolio Colors */
-  --hero-gradient-start: 210 100% 85%;
-  --hero-gradient-end: 222 47% 20%;
-  --skill-bar-bg: 222 47% 12%;
-  --skill-bar-fill: 210 100% 85%;
-  --card-hover: 222 47% 11%;
-  --text-gradient-start: 210 100% 85%;
-  --text-gradient-end: 214 80% 75%;
+  --border: 220 4% 16%;
+  --input: 220 4% 16%;
+  --ring: 216 56% 66%;
+  --radius: 0.5rem;
 }
 
 .light {
-  --background: 210 20% 98%;
-  --foreground: 222 47% 11%;
+  /* Light — #F1F4FB */
+  --background: 222 53% 96%;
+  --foreground: 220 6% 4%;
+  /* Card — #E3ECF3 tinted white */
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 220 6% 4%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --popover-foreground: 220 6% 4%;
 
-  --primary: 210 100% 40%;
+  /* Primary — deeper for contrast on light bg */
+  --primary: 216 56% 52%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 214 20% 93%;
-  --secondary-foreground: 222 47% 11%;
+  /* Secondary — #E3ECF3 */
+  --secondary: 206 36% 92%;
+  --secondary-foreground: 220 6% 4%;
 
-  --muted: 214 20% 93%;
-  --muted-foreground: 215 16% 47%;
+  /* Muted — #E3ECF3 */
+  --muted: 206 36% 92%;
+  --muted-foreground: 215 10% 40%;
 
-  --accent: 214 80% 52%;
-  --accent-foreground: 0 0% 100%;
+  /* Accent — #A7C2E0 */
+  --accent: 212 46% 77%;
+  --accent-foreground: 220 6% 4%;
 
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 214 20% 88%;
-  --input: 214 20% 88%;
-  --ring: 210 100% 40%;
-
-  --hero-gradient-start: 210 100% 40%;
-  --hero-gradient-end: 214 20% 80%;
-  --skill-bar-bg: 214 20% 93%;
-  --skill-bar-fill: 210 100% 40%;
-  --card-hover: 214 20% 96%;
-  --text-gradient-start: 210 100% 40%;
-  --text-gradient-end: 214 80% 52%;
+  /* Border — light blue tint */
+  --border: 212 30% 88%;
+  --input: 212 30% 88%;
+  --ring: 216 56% 52%;
 }
 
 @theme inline {
@@ -100,18 +90,9 @@
   --color-ring: hsl(var(--ring));
   --border-radius: var(--radius);
 
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
-
-  /* Custom portfolio colors */
-  --color-hero-gradient-start: hsl(var(--hero-gradient-start));
-  --color-hero-gradient-end: hsl(var(--hero-gradient-end));
-  --color-skill-bar-bg: hsl(var(--skill-bar-bg));
-  --color-skill-bar-fill: hsl(var(--skill-bar-fill));
-  --color-card-hover: hsl(var(--card-hover));
-  --color-text-gradient-start: hsl(var(--text-gradient-start));
-  --color-text-gradient-end: hsl(var(--text-gradient-end));
 }
 
 * {
@@ -172,53 +153,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-muted-foreground);
-}
-
-/* Hero gradient text */
-.gradient-text {
-  background: linear-gradient(
-    120deg,
-    var(--color-text-gradient-start),
-    var(--color-text-gradient-end)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Hero gradient background */
-.hero-gradient {
-  background: linear-gradient(
-    120deg,
-    var(--color-hero-gradient-start) 0%,
-    transparent 50%,
-    var(--color-hero-gradient-end) 100%
-  );
-  opacity: 0.3;
-}
-
-/* Card hover animation */
-.card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-hover:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  background-color: var(--color-card-hover);
-}
-
-/* Skill progress bar */
-.skill-bar {
-  background-color: var(--color-skill-bar-bg);
-}
-
-.skill-bar-fill {
-  background: linear-gradient(
-    90deg,
-    var(--color-skill-bar-fill),
-    var(--color-primary)
-  );
 }
 
 /* Animation keyframes */
@@ -291,52 +225,6 @@ body {
   }
 }
 
-@keyframes particles {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh) scale(0.1);
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100vh) scale(0.1);
-  }
-}
-
-@keyframes gradient-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes gradient-pulse {
-  0%,
-  100% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes mesh-gradient {
-  0% {
-    transform: translateX(-50%) translateY(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%) rotate(360deg);
-  }
-}
-
 @keyframes cursor-blink {
   0%,
   50% {
@@ -369,6 +257,11 @@ body {
   animation: marquee var(--duration) linear infinite;
 }
 
+.marquee-paused .animate-marquee,
+.marquee-paused .animate-marquee-vertical {
+  animation-play-state: paused;
+}
+
 .animate-marquee-vertical {
   animation: marquee-vertical var(--duration) linear infinite;
 }
@@ -377,149 +270,8 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-.animate-particles {
-  animation: particles var(--duration, 10s) linear infinite;
-}
-
 .animate-cursor-blink {
   animation: cursor-blink 1.5s ease-in-out infinite;
-}
-
-.animate-gradient-shift {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
-}
-
-.animate-gradient-pulse {
-  animation: gradient-pulse 4s ease-in-out infinite;
-}
-
-.animate-mesh-gradient {
-  animation: mesh-gradient 20s linear infinite;
-}
-
-/* Modern Gradient Backgrounds */
-.gradient-bg-primary {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--primary) / 0.8) 25%,
-    hsl(var(--accent)) 50%,
-    hsl(var(--primary) / 0.6) 75%,
-    hsl(var(--primary)) 100%
-  );
-}
-
-.gradient-bg-mesh {
-  background:
-    radial-gradient(
-      circle at 20% 50%,
-      hsl(var(--primary) / 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      hsl(var(--accent) / 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 80%,
-      hsl(var(--primary) / 0.2) 0%,
-      transparent 50%
-    ),
-    linear-gradient(
-      135deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--background) / 0.9) 100%
-    );
-}
-
-.gradient-bg-hero {
-  background:
-    radial-gradient(
-      ellipse at top left,
-      hsl(var(--primary) / 0.15) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at top right,
-      hsl(var(--accent) / 0.1) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at bottom,
-      hsl(var(--primary) / 0.1) 0%,
-      transparent 50%
-    ),
-    linear-gradient(
-      135deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--background) / 0.95) 100%
-    );
-}
-
-.gradient-overlay-subtle {
-  background: linear-gradient(
-    120deg,
-    hsl(var(--primary) / 0.05) 0%,
-    transparent 30%,
-    transparent 70%,
-    hsl(var(--accent) / 0.05) 100%
-  );
-}
-
-.gradient-bg-about {
-  background:
-    radial-gradient(
-      ellipse at top,
-      hsl(var(--primary) / 0.08) 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      135deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--muted) / 0.3) 100%
-    );
-}
-
-.gradient-bg-projects {
-  background:
-    radial-gradient(
-      circle at 30% 20%,
-      hsl(var(--primary) / 0.06) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 70% 80%,
-      hsl(var(--accent) / 0.04) 0%,
-      transparent 50%
-    ),
-    linear-gradient(180deg, transparent 0%, hsl(var(--primary) / 0.02) 100%);
-}
-
-.gradient-bg-contact {
-  background:
-    radial-gradient(
-      ellipse at bottom left,
-      hsl(var(--primary) / 0.1) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse at top right,
-      hsl(var(--accent) / 0.08) 0%,
-      transparent 60%
-    ),
-    linear-gradient(45deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%);
-}
-
-.gradient-border {
-  border-image: linear-gradient(
-      120deg,
-      hsl(var(--primary) / 0.3),
-      transparent,
-      hsl(var(--accent) / 0.3)
-    )
-    1;
 }
 
 /* Section padding */
@@ -563,4 +315,99 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+/* ============================================
+   EDITORIAL DESIGN SYSTEM
+   ============================================ */
+
+/* Display typography — hero headlines */
+.text-display {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+/* Section headings */
+.text-section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Body large — main paragraph text */
+.text-body-lg {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* Editorial section spacing */
+.section-editorial {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-editorial {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Editorial dividers */
+.editorial-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.editorial-divider-accent {
+  width: 3rem;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* Animated underline for links */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease-out;
+}
+
+.link-underline:hover::after,
+.group\/link:hover .link-underline::after {
+  width: 100%;
+}
+
+/* Social icon hover — scale + color */
+.social-icon {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Section subtitle styling */
+.text-section-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--color-muted-foreground);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
 }

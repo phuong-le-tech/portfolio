@@ -1,5 +1,8 @@
-import { Mail, Phone, MapPin, Clock, Linkedin, Github } from "lucide-react";
-import { ContactInfo, SocialLink } from "@/types";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { ContactInfo } from "@/types";
+
+// Social links are imported from hero.ts as single source of truth
+export { socialLinks } from "@/data/hero";
 
 export const contactInfo: ContactInfo[] = [
   {
@@ -25,18 +28,5 @@ export const contactInfo: ContactInfo[] = [
     label: "Availability",
     value: "Mon - Fri, 9AM - 6PM UTC+2",
     href: null,
-  },
-];
-
-export const socialLinks: SocialLink[] = [
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/phuong-le77100",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    href: "https://github.com/phuong-le-tech",
   },
 ];

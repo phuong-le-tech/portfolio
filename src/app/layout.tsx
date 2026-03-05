@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Syne, Outfit } from "next/font/google";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
 import { BackgroundEffect } from "@/components/ui/BackgroundEffect";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import "../globals.css";
 
-const syne = Syne({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-space-grotesk",
 });
 
-const outfit = Outfit({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Phuong LE",
   },
   description:
-    "Portfolio of Phuong LE, a full-stack developer specializing in React, Java/Spring, and cloud-native applications.",
+    "Portfolio of Phuong LE, a full-stack developer building fast, reliable web applications from database to pixel.",
   keywords: [
     "full-stack developer",
     "React",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Phuong LE | Full-Stack Developer",
     description:
-      "Portfolio of Phuong LE, a full-stack developer specializing in React, Java/Spring, and cloud-native applications.",
+      "Portfolio of Phuong LE, a full-stack developer building fast, reliable web applications from database to pixel.",
     type: "website",
   },
 };
@@ -46,9 +46,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${syne.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${spaceGrotesk.variable} ${dmSans.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ThemeProvider>
+          <a
+            href="#home"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-sm focus:text-sm focus:font-medium"
+          >
+            Skip to content
+          </a>
           <BackgroundEffect />
           {children}
         </ThemeProvider>
