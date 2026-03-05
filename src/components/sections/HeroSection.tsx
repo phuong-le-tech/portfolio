@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 import profilePhoto from "@/assets/profile.jpeg";
+import { BackgroundCellCore } from "@/components/ui/background-ripple-effect";
 
 const roles = ["Full-Stack Developer", "Backend Engineer", "Software Engineer"];
 
@@ -53,13 +54,10 @@ const HeroSection: React.FC = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-20"
     >
-      {/* Hero gradient background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary/3 rounded-full blur-[100px]" />
-      </div>
+      {/* Ripple grid background */}
+      <BackgroundCellCore />
 
-      <div className="container-custom w-full relative">
+      <div className="container-custom w-full relative z-50">
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
           {/* Left: Typography */}
           <div className="lg:col-span-2">

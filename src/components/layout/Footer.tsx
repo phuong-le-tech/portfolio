@@ -38,8 +38,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center text-sm text-muted-foreground/40">
             <span>
-              &copy; {currentYear} Phuong LE &middot; Built with React, Next.js
-              & Motion
+              &copy; {currentYear} Phuong LE &middot; All rights reserved.
             </span>
           </div>
         </div>

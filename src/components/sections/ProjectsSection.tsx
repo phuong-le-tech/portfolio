@@ -8,6 +8,7 @@ import { Project } from "@/types";
 import { cn } from "@/lib/utils";
 import { projects } from "@/data/projects";
 import { motion } from "motion/react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const PLACEHOLDER_IMAGE = "/projects/available_soon.jpg";
 
@@ -36,7 +37,16 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       >
         {/* Image */}
         <div className={cn("order-1", !isEven && "lg:order-2")}>
-          <div className="relative aspect-[16/10] overflow-hidden bg-card rounded-lg border border-border/50 shadow-sm group-hover/card:shadow-xl group-hover/card:border-border transition-all duration-500">
+          <div className="relative aspect-[16/10] rounded-lg p-[2px]">
+            <GlowingEffect
+              spread={40}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+              borderWidth={2}
+            />
+          <div className="relative h-full overflow-hidden bg-card rounded-lg border border-border/50 shadow-sm group-hover/card:shadow-xl group-hover/card:border-border transition-all duration-500">
             {isPlaceholder ? (
               <div className="absolute inset-0 bg-gradient-to-br from-card via-card to-primary/5 flex flex-col items-center justify-center gap-5">
                 <span className="font-mono text-xs text-muted-foreground/40 uppercase tracking-[0.3em]">
@@ -64,6 +74,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 className="w-full h-full object-cover group-hover/card:scale-[1.03] transition-transform duration-700 ease-out"
               />
             )}
+          </div>
           </div>
         </div>
 
