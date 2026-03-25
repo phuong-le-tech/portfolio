@@ -3,6 +3,18 @@ import { Project } from "@/types";
 export const projects: Project[] = [
   {
     id: 1,
+    title: "ShelfIO",
+    description:
+      "A full-stack inventory management application that lets users organize items into custom lists, track their status, and manage inventory through a modern dashboard.",
+    image: "/projects/shelfio.png",
+    technologies: ["React", "Java", "Spring Boot", "PostgreSQL", "Docker", "JWT", "Stripe"],
+    category: "Full-Stack",
+    liveUrl: "https://shelfio.org",
+    githubUrl: "https://github.com/phuong-le-tech/shelfio",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "BooqIn",
     description: `BooqIn is a platform for managing and lending books between users.
          The site allows users to create collections, share their books and borrow those of other users.`,
@@ -17,13 +29,11 @@ export const projects: Project[] = [
       "Docker",
     ],
     category: "Full-Stack",
-    liveUrl: undefined,
     githubUrl: "https://github.com/phuong-le-tech/booqin",
-    metrics: undefined,
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "Chadow",
     description: `The Chadow Project aims to enable an online chat server to facilitate file sharing between connected users,
          while preserving the anonymity of IP addresses. This protocol aims to offer two download modes: open mode,
@@ -31,13 +41,11 @@ export const projects: Project[] = [
     image: "/projects/available_soon.jpg",
     technologies: ["Java 21"],
     category: "Backend",
-    liveUrl: undefined,
     githubUrl: "https://github.com/phuong-le-tech/chadow",
-    metrics: undefined,
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "BooqIn - Android Version",
     description: `BooqIn is a platform for managing and lending books between users.
         The site allows users to create collections, share their books and borrow those of other users.
@@ -45,13 +53,11 @@ export const projects: Project[] = [
     image: "/projects/android.png",
     technologies: ["Kotlin"],
     category: "Mobile",
-    liveUrl: undefined,
     githubUrl: "https://github.com/phuong-le-tech/booqin-android",
-    metrics: undefined,
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "Nasm Compilator",
     description: `The objective of this project is to program a
         compiler that detects semantic errors and produces target code in NASM assembly language for
@@ -59,13 +65,11 @@ export const projects: Project[] = [
     image: "/projects/available_soon.jpg",
     technologies: ["C", "Yacc", "Lex"],
     category: "Backend",
-    liveUrl: undefined,
     githubUrl: "https://github.com/phuong-le-tech/nasm-compilator",
-    metrics: undefined,
     featured: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "GitClout",
     description: `The aim of the GitClout project is to write a web application that analyses the tags in a git repository
         (e.g. on GitHub or GitLab) and displays various information to provide
@@ -80,9 +84,7 @@ export const projects: Project[] = [
       "HyperSQL",
     ],
     category: "Full-Stack",
-    liveUrl: undefined,
     githubUrl: "https://github.com/phuong-le-tech/gitclout",
-    metrics: undefined,
     featured: false,
   },
 ];
