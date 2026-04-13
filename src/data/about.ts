@@ -10,11 +10,11 @@ import {
   SiPostgresql,
   SiMysql,
   SiMongodb,
-  SiAmazonwebservices,
   SiDocker,
   SiGit,
 } from "react-icons/si";
 import { DiJava } from "react-icons/di";
+import { FaAws } from "react-icons/fa";
 import { Skill, ExpertiseArea, TimelineItem } from "@/types";
 
 export const skills: Skill[] = [
@@ -44,7 +44,7 @@ export const skills: Skill[] = [
     category: "Database",
     color: "#47A248",
   },
-  { name: "AWS", icon: SiAmazonwebservices, category: "DevOps", color: "#FF9900" },
+  { name: "AWS", icon: FaAws, category: "DevOps", color: "#FF9900" },
   { name: "Docker", icon: SiDocker, category: "DevOps", color: "#2496ED" },
   { name: "Git", icon: SiGit, category: "DevOps", color: "#F05032" },
 ];
