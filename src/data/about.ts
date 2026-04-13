@@ -10,7 +10,7 @@ import {
   SiPostgresql,
   SiMysql,
   SiMongodb,
-  SiAmazon,
+  SiAmazonwebservices,
   SiDocker,
   SiGit,
 } from "react-icons/si";
@@ -44,7 +44,7 @@ export const skills: Skill[] = [
     category: "Database",
     color: "#47A248",
   },
-  { name: "AWS", icon: SiAmazon, category: "DevOps", color: "#FF9900" },
+  { name: "AWS", icon: SiAmazonwebservices, category: "DevOps", color: "#FF9900" },
   { name: "Docker", icon: SiDocker, category: "DevOps", color: "#2496ED" },
   { name: "Git", icon: SiGit, category: "DevOps", color: "#F05032" },
 ];
