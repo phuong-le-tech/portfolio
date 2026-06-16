@@ -16,8 +16,8 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "BooqIn",
-    description: `BooqIn is a platform for managing and lending books between users.
-         The site allows users to create collections, share their books and borrow those of other users.`,
+    description:
+      "A platform for managing and lending books between users. Allows users to create collections, share their books, and borrow those of other users.",
     image: "/projects/available_soon.jpg",
     technologies: [
       "React",
@@ -31,25 +31,25 @@ export const projects: Project[] = [
     category: "Full-Stack",
     githubUrl: "https://github.com/phuong-le-tech/booqin",
     featured: true,
+    hidden: true,
   },
   {
     id: 3,
     title: "Chadow",
-    description: `The Chadow Project aims to enable an online chat server to facilitate file sharing between connected users,
-         while preserving the anonymity of IP addresses. This protocol aims to offer two download modes: open mode,
-         where clients connect directly to each other, and hidden mode, where a proxy system is used to mask IP addresses.`,
+    description:
+      "An online chat server enabling file sharing between connected users while preserving IP address anonymity. Supports open mode (direct P2P) and hidden mode (proxy-based IP masking).",
     image: "/projects/available_soon.jpg",
     technologies: ["Java 21"],
     category: "Backend",
     githubUrl: "https://github.com/phuong-le-tech/chadow",
     featured: true,
+    hidden: true,
   },
   {
     id: 4,
-    title: "BooqIn - Android Version",
-    description: `BooqIn is a platform for managing and lending books between users.
-        The site allows users to create collections, share their books and borrow those of other users.
-        Adapt to android mobile user.`,
+    title: "BooqIn — Android",
+    description:
+      "The Android version of BooqIn — a platform for managing and lending books between users. Adapted for mobile with native Kotlin, supporting collections, sharing, and borrowing flows.",
     image: "/projects/android.png",
     technologies: ["Kotlin"],
     category: "Mobile",
@@ -59,21 +59,20 @@ export const projects: Project[] = [
   {
     id: 5,
     title: "Nasm Compilator",
-    description: `The objective of this project is to program a
-        compiler that detects semantic errors and produces target code in NASM assembly language for
-        the TPC programming language.`,
+    description:
+      "A compiler that detects semantic errors and produces target code in NASM assembly language for the TPC programming language.",
     image: "/projects/available_soon.jpg",
     technologies: ["C", "Yacc", "Lex"],
     category: "Backend",
     githubUrl: "https://github.com/phuong-le-tech/nasm-compilator",
     featured: false,
+    hidden: true,
   },
   {
     id: 6,
     title: "GitClout",
-    description: `The aim of the GitClout project is to write a web application that analyses the tags in a git repository
-        (e.g. on GitHub or GitLab) and displays various information to provide
-        a better understanding of each contributor's contributions.`,
+    description:
+      "A web application that analyses tags in a git repository and displays contributor statistics to provide a clearer understanding of each contributor's impact over time.",
     image: "/projects/available_soon.jpg",
     technologies: [
       "Java 21",
@@ -86,5 +85,6 @@ export const projects: Project[] = [
     category: "Full-Stack",
     githubUrl: "https://github.com/phuong-le-tech/gitclout",
     featured: false,
+    hidden: true,
   },
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowDown } from "lucide-react";
@@ -8,46 +8,16 @@ import { motion } from "motion/react";
 import profilePhoto from "@/assets/profile.jpeg";
 import { BackgroundCellCore } from "@/components/ui/background-ripple-effect";
 
-const roles = ["Full-Stack Developer", "Backend Engineer", "Software Engineer"];
-
-const HeroSection: React.FC = () => {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  const scrollToContact = useCallback((): void => {
+function HeroSection() {
+  const scrollToContact = (): void => {
     const section = document.getElementById("contact");
     if (section) section.scrollIntoView({ behavior: "smooth" });
-  }, []);
+  };
 
-  const scrollToAbout = useCallback((): void => {
+  const scrollToAbout = (): void => {
     const section = document.getElementById("about");
     if (section) section.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
-    const currentRole = roles[roleIndex];
-    const timeout = setTimeout(
-      () => {
-        if (!isDeleting) {
-          if (displayText.length < currentRole.length) {
-            setDisplayText(currentRole.slice(0, displayText.length + 1));
-          } else {
-            setTimeout(() => setIsDeleting(true), 2000);
-          }
-        } else {
-          if (displayText.length > 0) {
-            setDisplayText(displayText.slice(0, -1));
-          } else {
-            setIsDeleting(false);
-            setRoleIndex((prev) => (prev + 1) % roles.length);
-          }
-        }
-      },
-      isDeleting ? 40 : 80,
-    );
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex]);
+  };
 
   return (
     <section
@@ -58,9 +28,9 @@ const HeroSection: React.FC = () => {
       <BackgroundCellCore />
 
       <div className="container-custom w-full relative z-50">
-        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Typography */}
-          <div className="lg:col-span-2">
+          <div>
             {/* Available badge */}
             <motion.div
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border text-muted-foreground text-sm font-medium mb-10"
@@ -87,15 +57,14 @@ const HeroSection: React.FC = () => {
               <span className="text-primary">LE</span>
             </motion.h1>
 
-            {/* Role — typed effect */}
+            {/* Static role subtitle */}
             <motion.p
               className="text-muted-foreground text-xl md:text-2xl mt-6 font-light tracking-wide font-mono"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              {displayText}
-              <span className="animate-cursor-blink text-primary">|</span>
+              Full-Stack Developer&nbsp;&nbsp;·&nbsp;&nbsp;Java / Spring Boot&nbsp;&nbsp;·&nbsp;&nbsp;React
             </motion.p>
 
             {/* Tagline */}
@@ -109,7 +78,7 @@ const HeroSection: React.FC = () => {
               high-performance APIs, and reliable cloud-ready applications.
             </motion.p>
 
-            {/* CTAs — primary is larger and more prominent */}
+            {/* CTAs */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4 mt-10"
               initial={{ opacity: 0, y: 20 }}
@@ -138,14 +107,14 @@ const HeroSection: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Right: Profile image with framing */}
+          {/* Right: Profile image */}
           <motion.div
-            className="lg:col-span-1 flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <div className="relative aspect-[3/4] w-full max-w-[320px] overflow-hidden rounded-lg border border-border/50">
+            <div className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-lg border border-border/50 ring-1 ring-primary/20 shadow-xl">
               <Image
                 src={profilePhoto}
                 alt="Phuong LE - Full-Stack Developer"
@@ -157,7 +126,7 @@ const HeroSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator — subtle pulse instead of bounce */}
+        {/* Scroll indicator */}
         <motion.div
           className="flex justify-center mt-20"
           initial={{ opacity: 0 }}
@@ -178,6 +147,6 @@ const HeroSection: React.FC = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection;

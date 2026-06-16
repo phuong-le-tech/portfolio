@@ -14,7 +14,7 @@ import { FormData } from "@/types";
 import { contactInfo, socialLinks } from "@/data/contact";
 import { motion, AnimatePresence } from "motion/react";
 
-const ContactSection: React.FC = () => {
+function ContactSection() {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -62,9 +62,7 @@ const ContactSection: React.FC = () => {
       } else {
         throw new Error(`EmailJS returned status: ${result.status}`);
       }
-    } catch (error) {
-      console.error("Failed to send email:", error);
-
+    } catch {
       toast({
         title: "Failed to send message",
         description:
@@ -94,7 +92,7 @@ const ContactSection: React.FC = () => {
             Get In Touch
           </h2>
           <p className="text-section-subtitle mt-4">
-            Ready to bring your ideas to life? Let&apos;s discuss your project.
+            Open to new opportunities and interesting projects. I typically reply within 24 hours.
           </p>
         </motion.div>
 
@@ -306,6 +304,6 @@ const ContactSection: React.FC = () => {
       </div>
     </section>
   );
-};
+}
 
 export default ContactSection;
