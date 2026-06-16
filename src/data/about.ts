@@ -1,4 +1,4 @@
-import { Code2, Database } from "lucide-react";
+import { Code2, Database, Server, ShieldCheck } from "lucide-react";
 import {
   SiSpring,
   SiPhp,
@@ -71,6 +71,20 @@ export const expertiseAreas: ExpertiseArea[] = [
       "MongoDB",
       "Redis",
     ],
+  },
+  {
+    icon: Server,
+    title: "Cloud & DevOps",
+    description:
+      "Containerised deployments and cloud infrastructure focused on reliability and developer ergonomics.",
+    technologies: ["Docker", "AWS", "CI/CD", "Linux"],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Software Quality",
+    description:
+      "Test-driven development, clean architecture, and API design that holds up under real production load.",
+    technologies: ["TDD", "REST API Design", "SOLID", "Spring Testing"],
   },
 ];
 

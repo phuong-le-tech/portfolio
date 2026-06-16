@@ -2,8 +2,9 @@
 
 import { ArrowUp } from "lucide-react";
 import { motion } from "motion/react";
+import { socialLinks } from "@/data/hero";
 
-const Footer = () => {
+function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -35,6 +36,30 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* Social Links */}
+          <div className="flex items-center gap-5">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon text-foreground/60 cursor-pointer"
+                aria-label={social.label}
+              >
+                <social.icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
+
+          {/* Email */}
+          <a
+            href="mailto:phuong.le77100@gmail.com"
+            className="text-sm text-muted-foreground/50 hover:text-primary transition-colors"
+          >
+            phuong.le77100@gmail.com
+          </a>
+
           {/* Copyright */}
           <div className="text-center text-sm text-muted-foreground/40">
             <span>
@@ -45,6 +70,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

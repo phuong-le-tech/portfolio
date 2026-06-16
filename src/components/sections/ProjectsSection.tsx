@@ -171,13 +171,13 @@ const ProjectsSection: React.FC = () => {
             Selected Projects
           </h2>
           <p className="text-section-subtitle mt-4">
-            A showcase of my recent engineering projects.
+            Selected work in full-stack development, system design, and mobile.
           </p>
         </motion.div>
 
         {/* Projects List */}
         <div>
-          {projects.map((project, index) => (
+          {projects.filter((p) => !p.hidden).map((project, index) => (
             <ProjectCard
               key={project.id}
               project={project}

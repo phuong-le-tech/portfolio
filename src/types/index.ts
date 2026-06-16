@@ -17,6 +17,7 @@ export interface Project {
   githubUrl: string;
   metrics?: ProjectMetrics;
   featured: boolean;
+  hidden?: boolean;
 }
 
 export interface Skill {

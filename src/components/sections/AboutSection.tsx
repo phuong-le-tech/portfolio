@@ -15,7 +15,7 @@ import { TimelineItem } from "@/types";
 import { skills, expertiseAreas, timeline } from "@/data/about";
 import { Marquee } from "@/components/ui/Marquee";
 
-const TimelineCard = ({ item }: { item: TimelineItem }) => {
+function TimelineCard({ item }: { item: TimelineItem }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -119,9 +119,9 @@ const TimelineCard = ({ item }: { item: TimelineItem }) => {
       </div>
     </motion.div>
   );
-};
+}
 
-const AboutSection: React.FC = () => {
+function AboutSection() {
   const [marqueePaused, setMarqueePaused] = useState(false);
 
   return (
@@ -154,18 +154,21 @@ const AboutSection: React.FC = () => {
           {/* Story */}
           <div className="lg:col-span-7">
             <p className="text-body-lg text-muted-foreground">
-              I&apos;m a Full-Stack Java Developer with a Master&apos;s degree
-              in Software and Data Engineering, specializing in building
-              scalable backend systems and modern web applications. My expertise
-              lies in designing secure REST APIs with Spring Boot, implementing
-              clean architectures, and delivering reliable cloud-ready
-              applications. I focus on writing maintainable, well-tested code
-              while following best practices such as SOLID principles and
-              Test-Driven Development.
+              I&apos;m a Full-Stack Developer based in Paris with a
+              Master&apos;s in Software &amp; Data Engineering. I led the
+              migration of a production Symfony/Twig monolith to a decoupled API
+              Platform + React architecture — reducing coupling and giving the
+              team a cleaner foundation to ship from.
+              Before that, I spent a summer building trajectory-planning
+              algorithms for autonomous drones, which taught me more about
+              system correctness than most production codebases ever will.
             </p>
             <p className="text-body-lg text-muted-foreground mt-6">
-              I enjoy solving complex technical challenges and building systems
-              that are both efficient for developers and intuitive for users.
+              I specialise in Java/Spring Boot backends but I&apos;m equally
+              comfortable across the stack — from database schema to React
+              component. I care about code that&apos;s easy to reason about:
+              clean APIs, solid tests, and systems that don&apos;t surprise you
+              on a Friday afternoon.
             </p>
           </div>
 
@@ -310,6 +313,6 @@ const AboutSection: React.FC = () => {
       </div>
     </section>
   );
-};
+}
 
 export default AboutSection;

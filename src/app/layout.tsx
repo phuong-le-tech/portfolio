@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Phuong LE, a full-stack developer building fast, reliable web applications from database to pixel.",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phuong LE | Full-Stack Developer",
+    description:
+      "Portfolio of Phuong LE, a full-stack developer building fast, reliable web applications from database to pixel.",
+    images: ["/og-image.png"],
   },
 };
 
